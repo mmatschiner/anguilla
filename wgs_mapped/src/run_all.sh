@@ -17,3 +17,21 @@ bash run_iqtree_for_sliding_windows.sh
 
 # Summarize the results of iqtree analyses.
 bash summarize_iqtree_trees.sh
+
+# Get reads of mar and meg and map them to the species-specific mitochondrial genomes from ncbi.
+bash map_to_mitogenome.sh
+
+# Convert read files in bam format to fastq format.
+bash convert_bams_to_fastqs.sh
+
+# Make mitochondrial assemblies for mar and meg with mitobim and mira.
+bash make_mitochondrial_assemblies.sh
+
+# Make blast databases.
+bash make_blast_dbs.sh
+
+# Make alignments for mitochondrial markers.
+bash find_orthologs.sh
+
+# Identify changes in the amino-acid mitochondrial sequences between mar and meg.
+bash identify_coding_changes.sh

@@ -38,3 +38,24 @@ echo "Note that the file 'eel_assemblies.xml' in '../data/xml' was prepared manu
 
 # Run beast.
 run_beast.sh
+
+# Mask the ang, mar, meg, and obs assemblies with tandem repeat finder and repeat masker.
+bash create_masked_assemblies.sh
+
+# Make pairwise whole-genome alignments between ang and the three other species.
+bash make_whole_genome_alignment.sh
+
+# Analyze the pairwise whole-genome alignments for rearrangements.
+bash identify_rearrangements_from_mafs.sh
+
+# Merge rearrangements identified in multiple comparisons to generate a set of unique rearrangements.
+bash merge_rearrangements.sh
+
+# Analyze potential rearrangements in more detail.
+bash check_again_for_identified_rearrangements.sh
+
+# Sort the rearrangements matrix and calculate distances to genes.
+bash finalize_rearrangements_matrix.sh
+
+# Generate dotplots for all identified rearrangements.
+bash generate_dotplots.sh
